@@ -1,7 +1,7 @@
 /* Solidity Version have to be compatible with the OpenZepplin Version */
 pragma solidity ^0.8.0;
 
-/* Importing an Interface of ERC20 Token from OpenZepplin that is needed to manipulate ERC20 Tokens */
+/* Importing an Interface of ERC20 Token from OpenZepplin that is needed to manipulate another ERC20 Tokens */
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract PaymentProcessor {
@@ -13,6 +13,7 @@ contract PaymentProcessor {
     constructor(address _admin, address _mockDai) public {
         admin = _admin;
         /* Passing the Address to the imported Smart Contract to interact with DAI Coin */
+        /* Using the IERC20 Interface to interact with another ERC20 Token */
         mockDai = IERC20(_mockDai);
     }
 
